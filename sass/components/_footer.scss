@@ -30,7 +30,6 @@
         color: $light-blue;
       }
   }
-  }
   &__address-item--physical {
     color: $text-white;
     text-decoration: none;
@@ -80,7 +79,7 @@
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 4px;
     background-color: $background-dark;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0, 15));
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 15));
     padding: 15px 0px 15px 16px;
   &::placeholder {
     font-size: 16px;
@@ -108,7 +107,7 @@
   &__button-icon {
     fill: $text-white;
   }
-
+}
   .socials__headline {
     font-weight: 700;
     font-size: 14px;
