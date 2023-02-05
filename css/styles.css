@@ -51,7 +51,7 @@ svg {
   display: flex;
   align-items: center;
 }
-
+/* logo.scss */
 .logo {
   font-family: 'Raleway', sans-serif;
   text-decoration: none;
@@ -66,7 +66,7 @@ svg {
 .logo--black {
   color: var(--logo-black);
 }
-
+/*end */
 .header__nav-list {
   list-style: none;
   margin: 0;
