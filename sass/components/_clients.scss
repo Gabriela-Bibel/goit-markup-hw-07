@@ -1,5 +1,6 @@
 .clients {
-    &__header {
+  
+  &__header {
     font-weight: 700;
     font-size: 36px;
     line-height: 42px;
@@ -17,13 +18,13 @@
   &__logo {
     border: 1px solid #afb1b8;
     border-radius: 4px;
-    fill: var(--icon-grey);
+    fill: $icon-grey;
     padding: 17.71px 32px 14.25px 32px;
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
     &:hover,
-    &:focus{
-    fill: var(--light-blue);
-    border: 1px solid var(--light-blue);
+    &:focus {
+    fill: $light-blue;
+    border: 1px solid $light-blue;
     outline: none;
   }
 }
