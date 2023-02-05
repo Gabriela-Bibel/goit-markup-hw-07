@@ -36,18 +36,18 @@ svg {
 }
 
 /* header -------------------------------------------------------*/
-.top-nav {
+.header {
   border-bottom: 1px solid #ececec;
 }
 
-.header-wrapper {
+.header__wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 24px 0 25px;
 }
 
-.header-wrapper nav {
+.header__nav {
   display: flex;
   align-items: center;
 }
@@ -63,11 +63,11 @@ svg {
   width: fit-content;
 }
 
-.studio-black {
+.logo--black {
   color: var(--logo-black);
 }
 
-.menu-list {
+.header__nav-list {
   list-style: none;
   margin: 0;
   display: flex;
@@ -77,7 +77,7 @@ svg {
   padding-left: 93px;
 }
 
-.nav-link {
+.header__nav-link {
   text-decoration: none;
   position: relative;
   font-weight: 500;
@@ -90,29 +90,18 @@ svg {
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.nav-link:hover,
-.nav-link:focus {
-  color: var(--light-blue);
-}
-
-.nav-link:hover::after,
-.nav-link:focus::after {
-  content: '';
-  position: absolute;
-  display: block;
-  top: 46px;
-  width: 100%;
-  height: 4px;
-  background-color: var(--light-blue);
-  border-radius: 2px;
-}
-
-.active {
+.header__nav-link--active {
   color: var(--light-blue);
   position: relative;
 }
 
-.active::after {
+.header__nav-link:hover,
+.header__nav-link:focus {
+  color: var(--light-blue);
+}
+
+.header__nav-link:hover::after,
+.header__nav-link:focus::after {
   content: '';
   position: absolute;
   display: block;
@@ -123,14 +112,25 @@ svg {
   border-radius: 2px;
 }
 
-.contacts {
+.header__nav-link--active::after {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 46px;
+  width: 100%;
+  height: 4px;
+  background-color: var(--light-blue);
+  border-radius: 2px;
+}
+
+.header__contacts {
   display: flex;
   gap: 50px;
   padding-right: 12px;
   padding-top: 1px;
 }
 
-.contacts a {
+.header__contacts-item {
   text-decoration: none;
   color: var(--text-grey);
   font-weight: 500;
@@ -140,13 +140,13 @@ svg {
   fill: currentColor;
 }
 
-.contacts svg {
+.header__contacts-icon {
   margin-right: 10px;
   vertical-align: middle;
 }
 
-.contacts :hover,
-.contacts :focus {
+.header__contacts :hover,
+.header__contacts :focus {
   color: var(--light-blue);
   fill: var(--light-blue);
 }
@@ -162,7 +162,7 @@ svg {
   max-width: 1600px;
 }
 
-.offer-content {
+.offer__content {
   padding: 200px 237px;
   justify-content: center;
   display: flex;
@@ -170,7 +170,7 @@ svg {
   align-items: center;
 }
 
-.offer h1 {
+.offer__title {
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
@@ -182,7 +182,7 @@ svg {
   padding-bottom: 30px;
 }
 
-.offer button {
+.offer__button {
   background: var(--light-blue);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
@@ -213,7 +213,7 @@ svg {
   display: flex;
 }
 
-.modal-content {
+.modal {
   background-color: var(--text-white);
   height: 581px;
   width: 528px;
@@ -229,7 +229,7 @@ svg {
   margin: 0px;
 }
 
-.modal-content .close-button {
+.modal .modal__close-button {
   background-color: var(--text-white);
   color: var(--logo-black);
   width: 30px;
@@ -252,18 +252,18 @@ svg {
   transition: opacity 250ms 250ms ease, visibility 250ms 250ms ease;
 }
 
-.is-hidden .modal-content {
+.is-hidden .modal {
   transform: scaleY(0);
   transition-duration: 250ms;
 }
 
-.inputs {
+.modal__form {
   display: flex;
   flex-direction: column;
   padding-bottom: 20px;
 }
 
-.modal-content p {
+.modal__header {
   font-weight: 700;
   font-size: 20px;
   line-height: 1.15;
@@ -274,7 +274,7 @@ svg {
   margin: 0px;
 }
 
-.form-field {
+.modal__field {
   display: flex;
   flex-direction: column;
   padding-bottom: 10px;
@@ -282,7 +282,9 @@ svg {
   position: relative;
 }
 
-.form-field svg {
+.modal__field svg {
+  width: 18px;
+  height: 18px;
   position: absolute;
   left: 12px;
   top: 28px;
@@ -291,7 +293,7 @@ svg {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-field input {
+.modal__field input {
   width: 448px;
   height: 40px;
   border: 1px solid rgba(33, 33, 33, 0.2);
@@ -300,7 +302,7 @@ svg {
   transition: outline 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-field textarea {
+.modal__field textarea {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   resize: none;
@@ -308,33 +310,33 @@ svg {
   transition: outline 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-field textarea::placeholder {
+.modal__field textarea::placeholder {
   font-size: 12px;
   line-height: 1.166;
   letter-spacing: 0.01em;
   color: rgba(117, 117, 117, 0.5);
 }
 
-.form-field label {
+.modal__field label {
   font-size: 12px;
   line-height: 1.166;
   letter-spacing: 0.01em;
   color: var(--text-grey);
 }
 
-.form-field input:focus {
+.modal__field .modal__checkbox-input:focus {
   outline: 1px solid var(--light-blue);
 }
 
-.form-field input:focus + svg {
+.modal__field .modal__checkbox-input:focus + .modal__checkbox-svg {
   fill: var(--light-blue);
 }
 
-.form-field textarea:focus {
+.modal__field textarea:focus {
   outline: 1px solid var(--light-blue);
 }
 
-.modal-content .checkbox {
+.modal .modal__checkbox {
   padding-bottom: 30px;
   font-size: 14px;
   line-height: 1.71;
@@ -342,7 +344,7 @@ svg {
   color: var(--text-grey);
 }
 
-.modal-content .checkbox a {
+.modal .checkbox a {
   color: var(--light-blue);
   text-decoration: underline;
 }
@@ -362,7 +364,7 @@ svg {
   margin-right: 8px;
 }
 
-.checkbox svg {
+.modal__checkbox-svg {
   position: absolute;
   opacity: 0;
   width: 16px;
@@ -370,15 +372,15 @@ svg {
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.checkbox input[type='checkbox']:checked + svg {
+.modal__checkbox-input:checked + s.modal__checkbox-svg {
   opacity: 1;
 }
 
-.checkbox a {
+.modal__checkbox-link {
   padding: 0px 4px;
 }
 
-.modal-content .submit-button {
+.modal__submit-button {
   background: var(--light-blue);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border: none;
@@ -405,15 +407,15 @@ svg {
   margin: 0;
 }
 
-.articles div {
+.articles__item{
   background-color: var(--button-grey-background);
 }
 
-.articles div svg {
+.articles__icon {
   margin: 25px 100px;
 }
 
-.articles h4 {
+.articles__header {
   font-weight: 700;
   font-size: 14px;
   line-height: 1.16;
@@ -424,7 +426,7 @@ svg {
   padding-top: 30px;
 }
 
-.articles p {
+.articles__text {
   font-size: 14px;
   line-height: 1.78;
   color: var(--text-grey);
@@ -433,11 +435,11 @@ svg {
 }
 
 /* our-services------------------------------------------------------- */
-.service-range {
+.services {
   margin-top: -94px;
 }
 
-.service-range h3 {
+.services__header {
   font-weight: 700;
   font-size: 36px;
   line-height: 1.17;
@@ -447,19 +449,19 @@ svg {
   padding-bottom: 50px;
 }
 
-.service-range-images {
+.services__items {
   display: flex;
   gap: 30px;
 }
 
-.service-range-box {
+.services__box {
   position: relative;
   display: flex;
   justify-content: center;
   text-align: center;
 }
 
-.service-range-box p {
+.services__headline {
   margin: 0;
   background: rgba(47, 48, 58, 0.8);
   padding: 27px 0px;
@@ -480,7 +482,7 @@ svg {
   background-color: var(--button-grey-background);
 }
 
-.team-wrapper h3 {
+.team__header{
   font-weight: 700;
   font-size: 36px;
   line-height: 1.17;
@@ -491,7 +493,7 @@ svg {
   padding-bottom: 50px;
 }
 
-.team-wrapper ul {
+.team__list {
   list-style: none;
   display: flex;
   justify-content: center;
@@ -500,14 +502,14 @@ svg {
   padding: 0;
 }
 
-.team-wrapper figure {
+.team__item {
   background: var(--text-white);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
   margin: 0px;
 }
 
-.employee {
+.team__description {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -515,21 +517,21 @@ svg {
   gap: 10px;
 }
 
-.name {
+.team__name {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.05;
   letter-spacing: 0.03em;
 }
 
-.job {
+.team__job {
   font-size: 16px;
   line-height: 1.05;
   color: var(--text-grey);
   letter-spacing: 0.03em;
 }
 
-.socials {
+.team__socials {
   display: flex;
   gap: 10px;
   justify-content: center;
@@ -538,7 +540,7 @@ svg {
   padding-bottom: 30px;
 }
 
-.socials a {
+.team__socials a {
   fill: var(--icon-grey);
   width: 44px;
   height: 44px;
@@ -550,8 +552,8 @@ svg {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.socials a:hover,
-.socials a:focus {
+.team__socials a:hover,
+.team__socials a:focus {
   fill: var(--text-white);
   background-color: var(--light-blue);
 }
@@ -567,7 +569,7 @@ svg {
   justify-content: center;
 }
 
-.portfolio-type button {
+.portfolio-type__button {
   background: var(--button-grey-background);
   border-radius: 4px;
   font-weight: 500;
@@ -581,8 +583,8 @@ svg {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.portfolio-type button:hover,
-.portfolio-type button:focus {
+.portfolio-type__button:hover,
+.portfolio-type__button:focus {
   background: var(--light-blue);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
@@ -591,7 +593,7 @@ svg {
 }
 
 /* portfolio boxes------------------------------------------------------ */
-.portfolio-box {
+.portfolio {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -600,28 +602,28 @@ svg {
   margin: 0px;
 }
 
-.portfolio-box figure {
+.portfolio__item {
   margin: 0px;
   cursor: pointer;
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.pbox-image {
+.portfolio__box {
   position: relative;
   overflow: hidden;
   vertical-align: middle;
 }
 
-.portfolio-box figure:hover .overlay {
+.portfolio__box:hover .portfolio__overlay {
   transform: translatey(0);
 }
 
-.portfolio-box figure:hover,
-.portfolio-box figure:focus {
+.portfolio__item:hover,
+.portfolio__item:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
-.portfolio-box figure figcaption {
+.portfolio__item figcaption {
   background: var(--text-white);
   border: 1px solid #eeeeee;
   border-top: none;
@@ -631,21 +633,21 @@ svg {
   padding: 20px 24px;
 }
 
-.box-name {
+.portfolio__box-name {
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
 }
 
-.box-description {
+.portfolio__box-description {
   font-size: 16px;
   line-height: 1.88;
   color: var(--text-grey);
   letter-spacing: 0.03em;
 }
 
-.overlay {
+.portfolio__overlay {
   position: absolute;
   bottom: -1px;
   left: 0;
@@ -656,7 +658,7 @@ svg {
   transition: transform 250ms ease;
 }
 
-.overlay p {
+.portfolio__overlay-text {
   font-size: 18px;
   line-height: 1.56;
   letter-spacing: 0.03em;
@@ -668,7 +670,7 @@ svg {
 }
 
 /* our clients ------------------------------------------*/
-.clients-wrapper h3 {
+.clients__header {
   font-weight: 700;
   font-size: 36px;
   line-height: 42px;
@@ -678,12 +680,12 @@ svg {
   margin: 0px;
 }
 
-.clients-wrapper > .client-logo {
+.clients__list {
   display: inline-flex;
   gap: 30px;
 }
 
-.clients-wrapper > .client-logo a {
+.clients__logo {
   border: 1px solid #afb1b8;
   border-radius: 4px;
   fill: var(--icon-grey);
@@ -691,33 +693,39 @@ svg {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.clients-wrapper > .client-logo a:hover,
-.clients-wrapper > .client-logo a:focus {
+.clients__logo:hover,
+.clients__logo:focus {
   fill: var(--light-blue);
   border: 1px solid var(--light-blue);
   outline: none;
 }
 
 /* footer------------------------------------------------------------- */
-.bottom-nav {
+.footer {
   background-color: var(--background-dark);
 }
 
-.bottom-nav .container {
+.footer .container {
   display: flex;
 }
 
-.logo-address-container {
+.footer__wrapper {
   display: flex;
   flex-direction: column;
   padding: 60px 0px;
 }
 
-.studio-white {
+.footer__left {
+  display: flex;
+  flex-direction: column;
+  padding: 60px 0px;
+}
+
+.logo--white {
   color: var(--text-white);
 }
 
-.address-container {
+.footer__address {
   display: flex;
   flex-direction: column;
   gap: 9px;
@@ -725,14 +733,7 @@ svg {
   font-style: normal;
 }
 
-.headquarters {
-  font-size: 14px;
-  line-height: 1.71;
-  color: var(--text-white);
-  letter-spacing: 0.03em;
-}
-
-.bottom-nav address a {
+.footer__address-item {
   font-size: 14px;
   line-height: 1.71;
   color: var(--address-color);
@@ -742,14 +743,20 @@ svg {
   width: fit-content;
 }
 
-.bottom-nav address a:hover,
-.bottom-nav address a:focus,
-.headquarters:hover,
-.headquarters:focus {
+.footer__address-item--physical {
+  color: var(--text-white);
+  text-decoration: none;
+}
+
+.footer__address-item:hover,
+.footer__address-item:focus,
+.footer__address-item--physical:hover,
+.footer__address-item--physical:focus
+{
   color: var(--light-blue);
 }
 
-.footer-socials {
+.footer__socials {
   display: inline-flex;
   flex-direction: column;
   gap: 20px;
@@ -758,11 +765,11 @@ svg {
   padding-top: 72px;
 }
 
-.footer-socials > .socials {
+.footer__socials > .socials__icons {
   justify-content: left;
 }
 
-.footer-socials p {
+.socials__headline {
   font-weight: 700;
   font-size: 14px;
   line-height: 1.142;
@@ -772,28 +779,28 @@ svg {
   margin: 0px;
 }
 
-.footer-socials a {
+.socials__item {
   background-color: var(--grey-icon-bg);
   border-radius: 50%;
   fill: var(--text-white);
 }
 
-.footer-socials a:hover,
-.footer-socials a:focus {
+.socials__item:hover,
+.socials__item:focus {
   fill: var(--text-white);
   border-radius: 50%;
   background-color: var(--light-blue);
   outline: none;
 }
 
-.newsletter-form {
+.footer__form {
   display: flex;
   padding-left: 78px;
   padding-top: 72px;
   flex-direction: column;
 }
 
-.newsletter-form label {
+.footer__form-label {
   font-weight: 700;
   font-size: 14px;
   color: var(--text-white);
@@ -803,12 +810,17 @@ svg {
   padding-bottom: 20px;
 }
 
-.newsletter-form .input-box {
+.footer__form-input {
   display: flex;
   gap: 12px;
 }
 
-.newsletter-form .input-box input {
+/*.footer__input-box {
+  display: flex;
+  gap: 12px;
+}*/
+
+.footer__input-box {
   width: 358px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
@@ -817,13 +829,13 @@ svg {
   padding: 15px 0px 15px 16px;
 }
 
-.input-box input::placeholder {
+.footer__input-box::placeholder {
   font-size: 16px;
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
 }
 
-.newsletter-form .input-box button {
+.footer__form-button {
   display: flex;
   align-items: center;
   gap: 24px;
@@ -840,6 +852,6 @@ svg {
   letter-spacing: 0.06em;
 }
 
-.newsletter-form .input-box button svg {
+.footer__button-icon {
   fill: var(--text-white);
 }
